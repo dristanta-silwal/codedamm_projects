@@ -156,3 +156,32 @@ input{
 .incorrect {
 	background-color: #ff3333;
 }
+
+
+/* Birthdays */
+.con1 {
+	/* margin: 2rem; */
+	min-height: calc(100vh - 300px);
+	padding: 3rem;
+	align-items: center;
+	width: 60vw;
+	margin: 0 auto;
+	max-width: var(--max-width);
+}
+
+.person {
+	/* background-color: blue; */
+	display: grid;
+	grid-template-columns: auto 2fr;
+	column-gap: 0.75rem;
+	margin-bottom: 1.5rem;
+	align-items: center;
+}
+
+.person img {
+	width: 75px;
+	height: 75px;
+	object-fit: cover;
+	border-radius: 50%;
+	box-shadow: black;
+}

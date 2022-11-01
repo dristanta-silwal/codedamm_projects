@@ -67,7 +67,10 @@ export default function NavBar() {
                                 <NavLink to="/Quiz">Quiz</NavLink>
                             </li>
                             <li className="text-zinc-400 hover:text-blue-600">
-                                <NavLink to="ToDo">To DOs</NavLink>
+                                <NavLink to="/ToDo">To DOs</NavLink>
+                            </li>
+                            <li className="text-zinc-400 hover:text-blue-600">
+                                <NavLink to="/birthdays">Brithdays</NavLink>
                             </li>
                         </ul>
                     </div>

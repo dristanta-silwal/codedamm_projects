@@ -10,6 +10,7 @@ import Counter from "./containers/Counter";
 import FAQ from "./containers/FAQ/FAQ";
 import Quiz from "./containers/Quiz";
 import ToDo from "./containers/ToDo";
+import BdayRem from "./containers/Birthdays Remember/BdayRem";
 
 import './index.css'
 
@@ -23,6 +24,7 @@ function App() {
         <Route exact path='/FAQ' element={<FAQ />} />
         <Route exact path='/Quiz' element={<Quiz />} />
         <Route exact path='/ToDo' element={<ToDo />} />
+        <Route exact path='/birthdays' element={<BdayRem />} />
         <Route path="*" element={<Navigate to="/" replace />}/>
     </Routes>
     <Footer />
