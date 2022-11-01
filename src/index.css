@@ -1,13 +1,158 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*{
+    box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.fix_height {
+    min-height: calc(100vh - 148px - 72px);
+}
+
+button {
+    margin: 10px;
+    --b: 3px;
+    /* border thickness */
+    --s: .45em;
+    /* size of the corner */
+    --color: #373B44;
+
+    padding: calc(.5em + var(--s)) calc(.9em + var(--s));
+    -color: goldenrod;
+    --_p: var(--s);
+    background:
+        conic-gradient(from 90deg at var(--b) var(--b), #0000 90deg, var(--color) 0) var(--_p) var(--_p)/calc(100% - var(--b) - 2*var(--_p)) calc(100% - var(--b) - 2*var(--_p));
+    transition: .3s linear, color 0s, background-color 0s;
+    outline: var(--b) solid #0000;  
+    outline-offset: .6em;
+    font-size: 1rem;
+    font-weight: bolder;
+
+    border: 0;
+
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+
+button:hover,
+button:focus-visible {
+    --_p: 0px;
+    outline-color: var(--color);
+    outline-offset: .05em;
+}
+
+button:active {
+    background: var(--color);
+    color: white;
+}
+
+input{
+    border: 2px solid black;
+    /* height: 4rem; */
+    font-size: 1.2rem;
+    padding: 5px;
+    font-size: 1.5rem;
+    font-family: monospace;
+    line-height: 1.5;
+}
+
+
+/* FAQ Styles */
+.container {
+	width: 90vw;
+	margin: 5rem auto;
+	background: #4b5563;
+	border-radius: 10px;
+	padding: 2.5rem 2rem;
+	max-width: 1000px;
+	display: grid;
+	gap: 1rem 2rem;
+}
+.container h3 {
+	line-height: 1.2;
+	font-weight: 500;
+}
+@media screen and (min-width: 992px) {
+	.container {
+		display: grid;
+		grid-template-columns: 250px 1fr;
+	}
+}
+.question {
+	padding: 1rem 1.5rem;
+	border: 2px solid #4b5563;
+	margin-bottom: 1rem;
+	border-radius: 0.25rem;
+	box-shadow: 0 5px 15px rgb(73, 71, 71);
+    background-color: hsl(205, 100%, 96%);
+}
+.question h4 {
+    color:#4b5563;
+	text-transform: none;
+	line-height: 1.5;
+    font-family: monospace;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+.question p {
+	color: #4b5563;
+	margin-bottom: 0;
+	margin-top: 0.5rem;
+}
+
+/* Quiz */
+.app {
+	background-color: #4b5563;
+	width: 450px;
+	min-height: 200px;
+	height: min-content;
+	border-radius: 15px;
+	padding: 26.75px 20px;
+	box-shadow: 10px 10px 42px 0px rgba(0, 0, 0, 0.75);
+	display: flex;
+	justify-content: space-evenly;
+}
+
+.score-section {
+	display: flex;
+	font-size: 24px;
+	align-items: center;
+}
+
+/* QUESTION/TIMER/LEFT SECTION */
+.question-section {
+	width: 100%;
+	position: relative;
+    color: hsl(205, 100%, 96%);
+}
+
+.question-count {
+	margin-bottom: 20px;
+}
+
+.question-count span {
+	font-size: 2rem;
+}
+
+.question-text {
+	margin-bottom: 12px;
+}
+
+
+/* ANSWERS/RIGHT SECTION */
+.answer-section {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.correct {
+	background-color: #2f922f;
+}
+
+.incorrect {
+	background-color: #ff3333;
 }

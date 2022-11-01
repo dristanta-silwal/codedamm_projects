@@ -1,24 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react"
+
+import { Route, Routes, Navigate } from 'react-router-dom'
+
+import Home from "./constants/Home";
+import Navbar from "./constants/Navbar/Navbar";
+import Footer from "./constants/Footer/Footer";
+
+import Counter from "./containers/Counter";
+import FAQ from "./containers/FAQ/FAQ";
+import Quiz from "./containers/Quiz";
+import ToDo from "./containers/ToDo";
+
+import './index.css'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+    <Navbar />
+    <Routes>
+        <Route exact path='/' element={<Home />} />
+        <Route exact path='/Counter' element={<Counter />} />
+        <Route exact path='/FAQ' element={<FAQ />} />
+        <Route exact path='/Quiz' element={<Quiz />} />
+        <Route exact path='/ToDo' element={<ToDo />} />
+        <Route path="*" element={<Navigate to="/" replace />}/>
+    </Routes>
+    <Footer />
+    </>
   );
 }
 
